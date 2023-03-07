@@ -39,5 +39,10 @@ namespace Gyak3_VersionControl_K158DZ
             users.Add(u);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //insertSfd here
+        }
     }
 }
