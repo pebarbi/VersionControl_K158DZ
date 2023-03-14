@@ -13,9 +13,19 @@ namespace Gyak4_2_K158DZ
 
     public partial class Form1 : Form
     {
+        List<Flat> flats;
+        RealEstateEntities context = new RealEstateEntities();
+
+
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        void LoadData()
+        {
+            flats = context.Flats.ToList();
         }
     }
 }
