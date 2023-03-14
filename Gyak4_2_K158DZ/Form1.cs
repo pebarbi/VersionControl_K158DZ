@@ -76,7 +76,7 @@ namespace Gyak4_2_K158DZ
 
             }
 
-            object[,] values = new object[Flats.Count, headers.Length];
+            object[,] values = new object[flats.Count, headers.Length];
 
             int counter = 0;
             foreach (Flat f in flats)
@@ -92,7 +92,7 @@ namespace Gyak4_2_K158DZ
                 values[counter, 5] = f.NumberOfRooms;
                 values[counter, 6] = f.FloorArea;
                 values[counter, 7] = f.Price;
-                values[counter, 8] = "=" + GetCell(counter + 2, 8) + "/" + "*1000000" + GetCell(counter + 2, 7);
+                values[counter, 8] = "=" + GetCell(counter + 2, 8) + "*1000000" + "/"  + GetCell(counter + 2, 7);
                 counter++;
             }
 
