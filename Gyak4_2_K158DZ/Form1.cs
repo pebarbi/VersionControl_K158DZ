@@ -25,6 +25,7 @@ namespace Gyak4_2_K158DZ
         {
             InitializeComponent();
             LoadData();
+            CreateExcel();
         }
 
         void LoadData()
@@ -54,6 +55,27 @@ namespace Gyak4_2_K158DZ
                 xlWB = null;
                 xlApp = null;
             }
+        }
+
+        private void CreateTable()
+        {
+            string[] headers = new string[] {
+                "Kód",
+                "Eladó",
+                "Oldal",
+                "Kerület",
+                "Lift",
+                "Szobák száma",
+                "Alapterület (m2)",
+                "Ár (mFt)",
+                "Négyzetméter ár (Ft/m2)"};
+
+            for (int i = 0; i < headers.Length; i++)
+            {
+                xlSheet.Cells[1, i+1] = headers[i];
+
+            }
+
         }
     }
 }
