@@ -8,9 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gyak4_2_K158DZ
+namespace WindowsFormsApp1
 {
-
     public partial class Form1 : Form
     {
         public Form1()
