@@ -1,4 +1,5 @@
-﻿using _6.gyak_K158DZ.MnbServiceReference;
+﻿using _6.gyak_K158DZ.Entities;
+using _6.gyak_K158DZ.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,17 @@ namespace _6.gyak_K158DZ
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates = new BindingList<RateData>();
+
+
         public Form1()
         {
             InitializeComponent();
+
+            dgv1.DataSource = Rates.ToList();
+
             GetRates();
+
         }
 
         private void GetRates()
@@ -33,6 +41,7 @@ namespace _6.gyak_K158DZ
             var response = mnbService.GetExchangeRates(request);
 
             var result = response.GetExchangeRatesResult;
+            //richTextBox1.Text = result;
         }
     }
 }
