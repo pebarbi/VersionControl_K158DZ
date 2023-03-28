@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace _6.gyak_K158DZ
 {
@@ -21,13 +22,42 @@ namespace _6.gyak_K158DZ
         {
             InitializeComponent();
 
-            dgv1.DataSource = Rates.ToList();
+            dgv1.DataSource = Rates;
 
-            GetRates();
+            //var r = GetRates();
 
+            GetXmlData(GetRates());
         }
 
-        private void GetRates()
+        private void GetXmlData(string result)
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement item in xml.DocumentElement)
+            {
+                var date = item.GetAttribute("date");
+
+                var rate = (XmlElement)item.ChildNodes[0];
+
+                var currency = rate.GetAttribute("curr");
+
+                var value = decimal.Parse(rate.InnerText);
+
+                var unit = int.Parse(rate.GetAttribute("unit"));
+
+                Rates.Add(new RateData()
+                {
+                    Date = DateTime.Parse(date),
+                    Currency = currency,
+                    Value = unit !=0 
+                            ? value/unit 
+                            : 0 //ez a 3 sor az if gyosabb módja!!!
+                }); 
+            }
+        }
+
+        private string GetRates()
         {
             var mnbService = new MNBArfolyamServiceSoapClient(); //de lehetne MNBArfolyamServiceSoapClient mnbService = new MNBArfolyamServiceSoapClient() is
 
@@ -42,6 +72,8 @@ namespace _6.gyak_K158DZ
 
             var result = response.GetExchangeRatesResult;
             //richTextBox1.Text = result;
+
+            return result;
         }
     }
 }
