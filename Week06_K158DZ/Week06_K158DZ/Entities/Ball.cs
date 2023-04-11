@@ -47,4 +47,4 @@ namespace Week06_K158DZ.Entities
     //        Left += 1;
     //    }
 }
-}
+
