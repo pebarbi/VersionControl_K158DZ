@@ -7,16 +7,11 @@ using Week06_K158DZ.Abstractions;
 
 namespace Week06_K158DZ.Entities
 {
-    public class BallFactory : IToyFactory
+    public class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {
-            return new Ball();
+            return new Car();
         }
-
-        //public Ball CreateNew()
-        //{
-        //    return new Ball();
-        //}
     }
 }
