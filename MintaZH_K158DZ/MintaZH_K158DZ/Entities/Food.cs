@@ -11,7 +11,7 @@ namespace MintaZH_K158DZ.Entities
 {
     public class Food : Product
     {
-        public string Descriptipon { }
+        public string Description { get; set; }
 
         public Food()
         {
@@ -20,7 +20,7 @@ namespace MintaZH_K158DZ.Entities
 
         private void Food_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("{0}\n{1}", Title, Description));
+            MessageBox.Show(string.Format("Cím: {0} \n Megjegyzés: {1}", Title, Description));
             //MessageBox.Show(Title + "\n" + Description)
         }
 
