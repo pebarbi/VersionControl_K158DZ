@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Entities
 {
-    class DeathProbability
+    public class DeathProbability
     {
+        public Gender Gender { get; set; }
+        public int Age { get; set; }
+        public double P { get; set; }
+
     }
 }
