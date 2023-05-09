@@ -34,17 +34,35 @@ namespace WindowsFormsApp1
             Population = GetPopulation(@"C:\Tempp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Tempp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Tempp\halál.csv");
+
+            for (int year = 2005; year <= 2024; year++)
+            {
+                for (int i = 0; i < Population.Count; i++)
+                {
+                    //..
+                }
+
+                var nbrOfMales = (from x in Population
+                                  where x.Gender == Gender.Male && x.IsAlive
+                                  select x).Count();
+
+                var nbrOfFemales = (from x in Population
+                                  where x.Gender == Gender.Female && x.IsAlive
+                                  select x).Count();
+
+                Console.WriteLine(string.Format("Év:{0}\t" "Férfiak száma: {1}\t" "Nők száma: {2}\t", year, nbrOfMales, nbrOfFemales));
+            }
         }
 
-        public List<BirthProbability> GetPopulation(string csvpath)
+        public List<Person> GetPopulation(string csvpath)
         {
-            var population = new List<BirthProbability>();
+            var population = new List<Person>();
             using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
             {
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
-                    population.Add(new BirthProbability()
+                    population.Add(new Person()
                     {
                         BirthYear = int.Parse(line[0]),
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[1]),
