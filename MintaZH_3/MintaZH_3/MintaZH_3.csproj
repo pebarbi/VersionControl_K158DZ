@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildTestFixture.cs" />
     <Compile Include="Entities\Child.cs" />
     <Compile Include="Enum\Behaviour.cs" />
     <Compile Include="Form1.cs">
