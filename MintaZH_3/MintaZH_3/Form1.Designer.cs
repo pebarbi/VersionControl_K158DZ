@@ -53,6 +53,7 @@ namespace MintaZH_3
             this.txtBehaviour.Name = "txtBehaviour";
             this.txtBehaviour.Size = new System.Drawing.Size(122, 20);
             this.txtBehaviour.TabIndex = 1;
+            this.txtBehaviour.Text = "3";
             // 
             // label1
             // 
@@ -78,6 +79,7 @@ namespace MintaZH_3
             this.buttonAdd.TabIndex = 4;
             this.buttonAdd.Text = "Hozzáadás";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // lblBadCount
             // 
