@@ -38,6 +38,7 @@ namespace MintaZH_3
 
             c.Name = txtName.Text;
             c.YearlyBehaviour = (Behaviour)behaviour;
+            c.Gifts = pack.GetGifts(behaviour);
 
             children.Add(c);
 
