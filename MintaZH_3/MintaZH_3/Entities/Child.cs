@@ -25,7 +25,7 @@ namespace MintaZH_3.Entities
 
             //return true;
 
-            return value <= 1 && value >= 5;
+            return value >= 1 && value <= 5;
         }
     }
 }

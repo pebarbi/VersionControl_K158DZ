@@ -37,6 +37,8 @@ namespace MintaZH_3
                 return;
             }
 
+            pack.GetGifts(behaviour);
+
             c.Name = txtName.Text;
             c.YearlyBehaviour = (Behaviour)behaviour;
             c.Gifts = pack.GetGifts(behaviour);
