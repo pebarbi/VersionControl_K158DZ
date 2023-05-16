@@ -48,5 +48,16 @@ namespace MintaZH_3
 
             lblBadCount.Text = string.Format("Rosszak száma: {0}", badCount);
         }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath; //!!!!!!!!!
+
+            if (sfd.ShowDialog != DialogResult.OK)
+            {
+                return;
+            }
+        }
     }
 }
