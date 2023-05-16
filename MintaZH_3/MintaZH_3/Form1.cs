@@ -1,5 +1,6 @@
 ﻿using MintaZH_3.Entities;
 using MintaZH_3.Enum;
+using PackMaker;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace MintaZH_3
     public partial class Form1 : Form
     {
         BindingList<Child> children = new BindingList<Child>();
+        SantaClausPack pack = new SantaClausPack();
 
         public Form1()
         {
