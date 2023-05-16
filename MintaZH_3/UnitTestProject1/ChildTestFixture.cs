@@ -11,12 +11,13 @@ namespace MintaZH_3
     public class ChildTestFixture
     {
         [   Test,
-            TestCase 1,
-            TestCase 2,
-            TestCase 3,
-            TestCase 4,
-            TestCase 5,
-            TestCase 555
+            TestCase(1, true),
+            TestCase(2, true),
+            TestCase(3, true),
+            TestCase(4, true),
+            TestCase(5, true),
+            TestCase(555, true),
+            TestCase(0, true)
         ]
 
         public void TestCheckBehaviour (int value, bool expectedResult)
