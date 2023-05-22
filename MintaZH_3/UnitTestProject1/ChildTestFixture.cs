@@ -16,7 +16,7 @@ namespace MintaZH_3
             TestCase(3, true),
             TestCase(4, true),
             TestCase(5, true),
-            TestCase(555, true),
+            TestCase(555, false),
             TestCase(0, true)
         ]
 
